@@ -1,0 +1,19 @@
+<nav>
+  <ul class="nav nav-justified">
+    <li class="active"><a href="#">Dashboard</a></li>
+    <li><a href="#">Unfollowers</a></li>
+    <li><a href="#">New Followers</a></li>
+    <li><a href="#">Connections</a></li>
+    <%- if current_user %>
+      <li>
+        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+      </li>
+    <%- else %>
+      <li>
+        <%= link_to omniauth_authorize_path(:user, :twitter) do %>
+          Log in with <%= fa_icon(:twitter) %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
