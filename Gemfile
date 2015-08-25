@@ -79,3 +79,7 @@ group :development, :test do
   gem 'quiet_assets'
   # gem 'faker'
 end
+
+# auth stuff
+gem 'devise'
+gem 'omniauth-twitter'
