@@ -45,3 +45,37 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
+
+# guard & capistrano
+group :development do
+  gem 'guard'
+  gem 'guard-minitest'
+  gem 'guard-bundler'
+  gem 'guard-rails'
+  # gem 'guard-rubocop'
+  gem 'rb-readline'
+  gem 'growl'
+  gem 'thin'
+  # gem 'capistrano-file_db'
+  gem 'annotate', github: 'ctran/annotate_models'
+  # gem 'capistrano'
+  # gem 'capistrano-rails'
+  # gem 'capistrano-bundler'
+  # gem 'capistrano-rvm'
+end
+
+# bootstrap & font-awesome
+gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+## higher version (3.4.17) broke font-awesome-rails
+gem 'sass', '3.4.16'
+gem 'bootswatch-rails'
+
+gem 'haml'
+gem 'active_link_to'
+
+group :development, :test do
+  # gem 'factory_girl_rails', '~> 4.5'
+  gem 'quiet_assets'
+  # gem 'faker'
+end
