@@ -1,12 +1,14 @@
 <nav>
   <ul class="nav nav-justified">
     <li class="active"><a href="#">Dashboard</a></li>
-    <li><a href="#">Unfollowers</a></li>
-    <li><a href="#">New Followers</a></li>
-    <li><a href="#">Connections</a></li>
+    <li><a href="#">Unfollowers <span class="badge">2</span></a></li>
+    <li><a href="#">New Followers <span class="badge">4</span></a></li>
+    <li><a href="#">Connections <span class="badge">2</span></a></li>
     <%- if current_user %>
       <li>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+        <%= link_to(destroy_user_session_path, :method => :delete) do %>
+          Logout @<%= current_user.username %>
+        <% end %>
       </li>
     <%- else %>
       <li>
