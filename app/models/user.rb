@@ -6,8 +6,11 @@ class User < ActiveRecord::Base
   devise :trackable, :omniauthable, :omniauth_providers => [:twitter]
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.username = auth.info.nickname   # assuming the user model has a name
+    u = where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.username = auth.info.nickname
     end
+    u.update_attributes(username: auth.info.nickname,
+                        oauth_token: auth.credentials.token,
+                        oauth_secret: auth.credentials.secret)
   end
 end
