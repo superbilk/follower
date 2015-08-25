@@ -12,5 +12,6 @@ class User < ActiveRecord::Base
     u.update_attributes(username: auth.info.nickname,
                         oauth_token: auth.credentials.token,
                         oauth_secret: auth.credentials.secret)
+    u
   end
 end
