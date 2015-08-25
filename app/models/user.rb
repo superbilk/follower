@@ -9,9 +9,10 @@ class User < ActiveRecord::Base
     u = where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.username = auth.info.nickname
     end
-    u.update_attributes(username: auth.info.nickname,
+    u.assign_attributes(username: auth.info.nickname,
                         oauth_token: auth.credentials.token,
                         oauth_secret: auth.credentials.secret)
+    u.save if u.changed?
     u
   end
 end
