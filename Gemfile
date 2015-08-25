@@ -84,3 +84,10 @@ end
 # auth stuff
 gem 'devise'
 gem 'omniauth-twitter'
+
+gem 'twitter'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end

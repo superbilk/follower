@@ -5,5 +5,6 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @user = current_user
+    @my_timeline = current_user.twitter.home_timeline(count: 5)
   end
 end
