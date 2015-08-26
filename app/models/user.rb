@@ -15,7 +15,8 @@ class User < ActiveRecord::Base
                         oauth_token: auth.credentials.token,
                         oauth_secret: auth.credentials.secret)
     u.save if u.changed?
-    u
+    TwitterAccount.create_or_update(auth)
+    return u
   end
 
   def twitter
