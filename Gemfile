@@ -68,8 +68,6 @@ end
 # bootstrap & font-awesome
 gem 'bootstrap-sass'
 gem 'font-awesome-rails'
-## higher version (3.4.17) broke font-awesome-rails
-gem 'sass', '3.4.16'
 # gem 'bootswatch-rails'
 
 gem 'haml'
