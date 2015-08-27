@@ -1,7 +1,12 @@
 <h2>Log in</h2>
 
-<%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= link_to "Log in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider) %><br />
-  <% end -%>
-<% end -%>
+<!-- Jumbotron -->
+<div class="jumbotron">
+  <h1>Watch your twitter unfollowers</h1>
+  <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+  <p>
+    <%= link_to omniauth_authorize_path(:user, :twitter), class: "twitter_login_button btn btn-lg btn-success", role: "button" do %>
+      <i class="spinner"></i> Log in with <%= fa_icon(:twitter) %>
+    <% end %>
+  </p>
+</div>
