@@ -58,7 +58,7 @@ group :development do
   # gem 'guard-rubocop'
   gem 'rb-readline'
   gem 'growl'
-  gem 'thin'
+  # gem 'thin'
   # gem 'capistrano-file_db'
   gem 'annotate', github: 'ctran/annotate_models'
   # gem 'capistrano'
@@ -91,3 +91,6 @@ group :development do
   gem "better_errors"
   gem "binding_of_caller"
 end
+
+gem 'rails_12factor', group: :production # for heroku
+gem 'puma'
