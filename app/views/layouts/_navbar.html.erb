@@ -12,8 +12,8 @@
       </li>
     <%- else %>
       <li>
-        <%= link_to omniauth_authorize_path(:user, :twitter) do %>
-          Log in with <%= fa_icon(:twitter) %>
+        <%= link_to omniauth_authorize_path(:user, :twitter), id: 'twitter_login_button' do %>
+        <i class="spinner"></i> Log in with <%= fa_icon(:twitter) %>
         <% end %>
       </li>
     <% end %>
