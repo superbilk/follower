@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.2.3" #for heroku
+
 gem 'dotenv-rails', :groups => [:development, :test]
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
