@@ -15,11 +15,6 @@ class User < ActiveRecord::Base
                         oauth_token: auth.credentials.token,
                         oauth_secret: auth.credentials.secret)
     u.save if u.changed?
-    followers = u.twitter.followers
-    followers.each do |follower|
-      TwitterAccount.create_or_update(follower)
-      logger.info "twitter account: #{follower.id} / #{follower.screen_name}"
-    end
     return u
   end
 
