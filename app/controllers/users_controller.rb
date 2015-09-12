@@ -11,4 +11,8 @@ class UsersController < ApplicationController
     #   @my_timeline = []
     # end
   end
+
+  def dashboard
+  end
+
 end
